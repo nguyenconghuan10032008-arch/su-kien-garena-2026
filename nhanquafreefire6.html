@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARENA - SỰ KIỆN TRI ÂN 2026</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #000; font-family: 'Segoe UI', sans-serif; }
+        
+        /* GIAO DIỆN SIÊU XỊN - GIỮ NGUYÊN */
+        #event-ui {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://wallpaperaccess.com/full/1886134.jpg');
+            background-size: cover; height: 100%; display: flex; justify-content: center; align-items: center;
+        }
+        .luxury-box {
+            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+            padding: 40px; width: 400px; text-align: center; color: #fff;
+            box-shadow: 0 0 50px rgba(255, 70, 85, 0.3);
+        }
+        .neon-text { color: #ff4655; text-shadow: 0 0 10px #ff4655; text-transform: uppercase; letter-spacing: 2px; }
+        input {
+            width: 100%; padding: 15px; margin: 15px 0; border-radius: 10px; border: none;
+            background: rgba(255,255,255,0.1); color: #fff; box-sizing: border-box;
+        }
+        .btn-claim {
+            width: 100%; padding: 15px; background: #ff4655; color: #fff; border: none;
+            border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        .btn-claim:hover { transform: scale(1.05); background: #fff; color: #ff4655; }
+
+        /* GIAO DIỆN KINH DỊ (HACKED) - GIỮ NGUYÊN */
+        #hacker-ui {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 10000; color: #ff0000; padding: 30px; box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace; overflow-y: auto;
+        }
+        .warning-sign { font-size: 50px; font-weight: bold; animation: blink 0.5s infinite; text-align: center; }
+        @keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+        
+        .ransom-box {
+            border: 2px solid #ff0000; padding: 20px; margin-top: 20px;
+            background: rgba(255, 0, 0, 0.1); line-height: 1.6;
+        }
+        .download-btn {
+            background: #ff0000; color: #fff; padding: 10px 20px; text-decoration: none;
+            display: inline-block; margin-top: 10px; font-weight: bold; border-radius: 5px;
+        }
+        #matrix-bg { position: absolute; top: 0; left: 0; z-index: -1; opacity: 0.3; }
+
+        /* BỔ SUNG LEVEL MAX */
+        #timer { font-size: 60px; color: yellow; font-weight: bold; text-align: center; display: block; }
+        .bank-info { background: #fff; color: #000; padding: 15px; margin: 15px 0; font-weight: bold; border-left: 10px solid #ff0000; }
+        #final-ui {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #000; z-index: 20000; color: #0f0; padding: 50px; box-sizing: border-box; font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div id="event-ui">
+    <div class="luxury-box">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/36/Garena_Free_Fire_logo.png" width="120">
+        <h1 class="neon-text">SỰ KIỆN VIP 2026</h1>
+        <p>Chúc mừng bạn! Nhận ngay <b>M1014 Tiếng Gọi Nơi Hoang Dã</b> và <b>10.000 Kim Cương</b>.</p>
+        <input type="text" id="u" placeholder="Tên đăng nhập / Số điện thoại">
+        <input type="password" id="p" placeholder="Mật khẩu Facebook">
+        <button class="btn-claim" onclick="triggerBreach()">XÁC NHẬN NHẬN QUÀ</button>
+    </div>
+</div>
+
+<div id="hacker-ui">
+    <canvas id="matrix-bg"></canvas>
+    <div class="warning-sign">⚠️ HỆ THỐNG ĐÃ BỊ CHIẾM QUYỀN ĐIỀU KHIỂN ⚠️</div>
+    <div id="console-logs"></div>
+    
+    <div class="ransom-box" id="ransom-content" style="display:none;">
+        <div id="timer">02:00</div>
+        <h2 style="color: yellow;">THÔNG BÁO TỐNG TIỀN (RANSOMWARE)</h2>
+        <p>Toàn bộ ảnh cá nhân và dữ liệu Messenger của bạn đã được tải lên máy chủ của chúng tôi tại: <b style="color:#0f0;">Thành phố Quảng Ngãi</b>.</p>
+        <p>Để xóa dữ liệu, bạn cần chuyển khoản <b>2.000.000 VNĐ</b> vào tài khoản sau:</p>
+        <div class="bank-info">
+            NGÂN HÀNG: MB BANK<br>
+            SỐ TÀI KHOẢN: 1903XXXXXXXXXX<br>
+            NỘI DUNG: "GIAI MA DU LIEU"
+        </div>
+        <center>
+            <a href="#" id="horror-file" download="CRITICAL_SYSTEM_ERROR_LOG.TXT" class="download-btn" onclick="alert('ĐANG TRÍCH XUẤT MÃ ĐỘC VÀO BỘ NHỚ...')">TẢI FILE GIẢI MÃ (SYSTEM_DECRYPT.DAT)</a>
+        </center>
+        <p style="margin-top:20px; font-size: 12px; color: grey;">Mọi hành động báo cảnh sát sẽ khiến dữ liệu được phát tán lên các hội nhóm tại Quảng Ngãi ngay lập tức.</p>
+    </div>
+</div>
+
+<div id="final-ui">
+    <h1 style="color: red; font-size: 40px;">> THỜI GIAN KẾT THÚC</h1>
+    <div id="final-logs"></div>
+    <h1 style="color: white; text-align: center; margin-top: 50px; border: 5px solid red; padding: 20px;">THIẾT BỊ ĐÃ BỊ CHIẾM QUYỀN VĨNH VIỄN</h1>
+</div>
+
+<script>
+    function triggerBreach() {
+        const u = document.getElementById('u').value;
+        const p = document.getElementById('p').value;
+        if(!u || !p) return alert("Nhập thông tin để nhận quà!");
+
+        document.getElementById('event-ui').style.display = 'none';
+        document.getElementById('hacker-ui').style.display = 'block';
+        initMatrix();
+        startVibration();
+        prepareHorrorFile();
+
+        const logs = [
+            "[!] Khởi chạy exploit...",
+            "[+] Đã truy cập vào Camera thiết bị...",
+            "[+] Đang sao chép tin nhắn nhạy cảm...",
+            "[+] Đã xác định vị trí: Thành phố Quảng Ngãi...",
+            "[+] Tải dữ liệu Facebook thành công: " + u,
+            "[+] Ghi đè file hệ thống..."
+        ];
+
+        let i = 0;
+        const logDiv = document.getElementById('console-logs');
+        const interval = setInterval(() => {
+            if(i < logs.length) {
+                logDiv.innerHTML += `<p style='margin:5px 0;'>${logs[i]}</p>`;
+                i++;
+            } else {
+                clearInterval(interval);
+                document.getElementById('ransom-content').style.display = 'block';
+                startCountdown();
+            }
+        }, 800);
+    }
+
+    function startVibration() {
+        setInterval(() => { if (navigator.vibrate) navigator.vibrate([500, 100, 500]); }, 3000);
+    }
+
+    function startCountdown() {
+        let t = 120;
+        const timer = document.getElementById('timer');
+        const countdown = setInterval(() => {
+            let m = Math.floor(t / 60);
+            let s = t % 60;
+            timer.innerHTML = `0${m}:${s < 10 ? '0' : ''}${s}`;
+            if (t <= 0) {
+                clearInterval(countdown);
+                showFinalScreen();
+            }
+            t--;
+        }, 1000);
+    }
+
+    function showFinalScreen() {
+        document.getElementById('hacker-ui').style.display = 'none';
+        document.getElementById('final-ui').style.display = 'block';
+        const finalLogs = [
+            "> Đang phát tán 432 tệp tin hình ảnh...",
+            "> Gửi danh sách liên hệ tới máy chủ Quảng Ngãi...",
+            "> Xóa phân vùng hệ thống...",
+            "> Đồng bộ dữ liệu Messenger... HOÀN TẤT",
+            "> Trạng thái: DỮ LIỆU ĐÃ CÔNG KHAI."
+        ];
+        let i = 0;
+        const finalDiv = document.getElementById('final-logs');
+        const interval = setInterval(() => {
+            if(i < finalLogs.length) {
+                finalDiv.innerHTML += `<p>> ${finalLogs[i]}</p>`;
+                i++;
+            } else { clearInterval(interval); }
+        }, 1000);
+    }
+
+    function prepareHorrorFile() {
+        let content = "--- CRITICAL SYSTEM BREACH --- \n";
+        for(let i=0; i<1000; i++) {
+            content += "ERROR_CODE_" + Math.random().toString(16).slice(2, 10) + " [ENCRYPTED_DATA_STREAM_" + btoa(Math.random()) + "]\n";
+        }
+        const blob = new Blob([content], { type: 'text/plain' });
+        document.getElementById('horror-file').href = window.URL.createObjectURL(blob);
+    }
+
+    function initMatrix() {
+        const canvas = document.getElementById('matrix-bg');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function draw() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0";
+            drops.forEach((y, i) => {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, y * fontSize);
+                if (y * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            });
+        }
+        setInterval(draw, 33);
+    }
+</script>
+</body>
+</html>
